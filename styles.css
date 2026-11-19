@@ -270,7 +270,7 @@ h2 { font-size: clamp(3.2rem, 5.25vw, 5.1rem); letter-spacing: -.018em; }
 .location-copy .section-label { border-color: #10100f65; color: #252016; }
 .location-copy > p:not(.section-label) { max-width: 26rem; margin-top: .7rem; }
 .location-address { display: flex; align-items: center; gap: .37rem; font-weight: 800; }
-.location-photo { width: 100%; height: 18rem; object-fit: cover; object-position: 50% 52%; border-radius: .45rem; }
+.location-photo { width: 100%; height: auto; aspect-ratio: 1.55; object-fit: cover; object-position: center top; border-radius: .45rem; }
 .site-footer { background: #070707; color: #d8d6cf; }
 .footer-inner { min-height: 6rem; display: flex; align-items: center; justify-content: space-between; gap: 1.25rem; }
 .footer-inner p { font-size: .9rem; text-align: center; }
@@ -370,7 +370,6 @@ h2 { font-size: clamp(3.2rem, 5.25vw, 5.1rem); letter-spacing: -.018em; }
   .restaurant-grid { gap: 1.6rem; }
   .restaurant-photos { grid-template-rows: repeat(2, 7rem); }
   .location-grid { gap: 1.35rem; }
-  .location-photo { height: 16rem; }
 }
 
 @media (max-width: 37rem) {
@@ -394,7 +393,6 @@ h2 { font-size: clamp(3.2rem, 5.25vw, 5.1rem); letter-spacing: -.018em; }
   .menu-details { padding-inline: .6rem; font-size: .9rem; }
   .restaurant-grid, .location-grid { grid-template-columns: 1fr; }
   .restaurant-photos { grid-template-rows: repeat(2, 6.85rem); }
-  .location-photo { height: auto; aspect-ratio: 1.55; }
   .location-actions { gap: .55rem; margin-top: 1.2rem; }
   .location-actions .button { padding-inline: .68rem; font-size: .86rem; }
   .footer-inner { min-height: auto; padding-block: 1rem; display: grid; grid-template-columns: auto 1fr; gap: .5rem; }
