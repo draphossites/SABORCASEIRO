@@ -13,6 +13,7 @@
   <link rel="icon" href="assets/logo.webp" type="image/webp">
   <link rel="stylesheet" href="styles.css">
   <script src="site.js" defer></script>
+  <script src="order.js" defer></script>
 </head>
 <body>
   <svg xmlns="http://www.w3.org/2000/svg" class="icon-library" aria-hidden="true">
@@ -24,6 +25,7 @@
     <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>
     <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
     <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M4 8h16l1 13H3L4 8Z"/><path d="M9 9V6a3 3 0 1 1 6 0v3"/></symbol>
   </svg>
   <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
   <header class="site-header" id="inicio">
@@ -38,7 +40,7 @@
         <a href="#restaurante">O restaurante</a>
         <a href="#localizacao">Localização</a>
       </nav>
-      <a class="button button--yellow header-order" href="https://wa.me/5551999088670?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20pedido%20no%20Sabor%20Caseiro." target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg> <span>Pedir no WhatsApp</span></a>
+      <button class="button button--yellow header-order" type="button" data-open-order aria-haspopup="dialog"><svg class="icon" aria-hidden="true"><use href="#i-bag"></use></svg> <span>Meu pedido</span> <span class="order-count" data-order-count hidden>0</span></button>
     </div>
   </header>
 
@@ -50,7 +52,7 @@
         <h1 id="hero-title">Comida de casa,<br><span>sabor de verdade.</span></h1>
         <p class="hero-description">Churrasco na brasa, buffet caseiro e combos para dividir. Venha almoçar com a gente ou peça de casa.</p>
         <div class="hero-actions">
-          <a class="button button--yellow" href="https://wa.me/5551999088670?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20pedido%20no%20Sabor%20Caseiro." target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg> Pedir no WhatsApp</a>
+          <button class="button button--yellow" type="button" data-open-order aria-haspopup="dialog"><svg class="icon" aria-hidden="true"><use href="#i-bag"></use></svg> Meu pedido</button>
           <a class="button button--outline" href="#cardapio">Ver cardápio</a>
         </div>
       </div>
@@ -101,7 +103,7 @@
               <p class="menu-description">Sobrecoxas assadas com arroz, farofa e maionese de batata.</p>
               <div class="menu-card-footer">
                 <p class="menu-price"><strong>R$ 50,00</strong></p>
-                <a class="menu-details" href="assets/combo-junior-arte.webp" data-dialog="combo-junior" aria-label="Ver arte e detalhes do Combo Júnior">Ver arte</a>
+                <a class="menu-details" href="assets/combo-junior-arte.webp" data-dialog="combo-junior" aria-label="Ver e pedir o Combo Júnior">Ver e pedir</a>
               </div>
             </div>
           </article>
@@ -115,7 +117,7 @@
               <p class="menu-description">Sobrecoxas assadas com massa, arroz, farofa e maionese de batata.</p>
               <div class="menu-card-footer">
                 <p class="menu-price"><strong>R$ 70,00</strong></p>
-                <a class="menu-details" href="assets/combo-familia-arte.webp" data-dialog="combo-familia" aria-label="Ver arte e detalhes do Combo Família">Ver arte</a>
+                <a class="menu-details" href="assets/combo-familia-arte.webp" data-dialog="combo-familia" aria-label="Ver e pedir o Combo Família">Ver e pedir</a>
               </div>
             </div>
           </article>
@@ -131,7 +133,7 @@
               <p class="menu-description">Frango, arroz, feijão, massa ao alho e óleo, maionese de batata e polenta frita.</p>
               <div class="menu-card-footer">
                 <p class="menu-price"><strong>R$ 20,00</strong></p>
-                <a class="menu-details" href="assets/prato-sexta.webp" data-dialog="prato-sexta" aria-label="Ver detalhes de Prato de sexta">Ver detalhes</a>
+                <a class="menu-details" href="assets/prato-sexta-arte.webp" data-dialog="prato-sexta" aria-label="Ver e pedir o prato de sexta">Ver e pedir</a>
               </div>
             </div>
           </article>
@@ -145,7 +147,7 @@
               <p class="menu-description">Bife ou frango grelhado, arroz, feijão, fritas, ovo e paçoquinha.</p>
               <div class="menu-card-footer">
                 <p class="menu-price"><strong>R$ 20,00</strong></p>
-                <a class="menu-details" href="assets/prato-sabado.webp" data-dialog="prato-sabado" aria-label="Ver detalhes de Prato de sábado">Ver detalhes</a>
+                <a class="menu-details" href="assets/prato-sabado-arte.webp" data-dialog="prato-sabado" aria-label="Ver e pedir o prato de sábado">Ver e pedir</a>
               </div>
             </div>
           </article>
@@ -209,7 +211,16 @@
         <h2 id="alaminuta-m-titulo">Alaminuta M</h2>
         <p>1 bife grelhado de gado ou frango, 1 ovo frito, arroz branco, feijão com bacon e calabresa, batata frita e salada de alface e tomate.</p>
         <p class="dialog-price">R$ 25,00</p>
-        <a class="button button--yellow" href="https://wa.me/5551999088670?text=Ol%C3%A1%2C%20Sabor%20Caseiro!%20Gostaria%20de%20pedir%20uma%20alaminuta%20tamanho%20M." target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg> Pedir pelo WhatsApp</a>
+        <form class="add-item" data-add-item="alaminuta-m">
+          <label>Escolha a carne
+            <select name="protein" required>
+              <option value="">Selecione</option>
+              <option>Bife de gado</option>
+              <option>Frango grelhado</option>
+            </select>
+          </label>
+          <button class="button button--yellow" type="submit"><svg class="icon" aria-hidden="true"><use href="#i-bag"></use></svg> Adicionar ao pedido</button>
+        </form>
         <div class="dialog-links">
           <a href="assets/alaminuta-m-arte.webp" target="_blank" rel="noopener noreferrer">Abrir imagem em tamanho maior</a>
           <a href="assets/alaminuta.webp" target="_blank" rel="noopener noreferrer">Ver cartaz original</a>
@@ -226,7 +237,16 @@
         <h2 id="alaminuta-g-titulo">Alaminuta G</h2>
         <p>2 bifes grelhados de gado ou frango, 2 ovos fritos, arroz branco, feijão com bacon e calabresa, batata frita e salada de alface e tomate.</p>
         <p class="dialog-price">R$ 34,00</p>
-        <a class="button button--yellow" href="https://wa.me/5551999088670?text=Ol%C3%A1%2C%20Sabor%20Caseiro!%20Gostaria%20de%20pedir%20uma%20alaminuta%20tamanho%20G." target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg> Pedir pelo WhatsApp</a>
+        <form class="add-item" data-add-item="alaminuta-g">
+          <label>Escolha a carne
+            <select name="protein" required>
+              <option value="">Selecione</option>
+              <option>Bife de gado</option>
+              <option>Frango grelhado</option>
+            </select>
+          </label>
+          <button class="button button--yellow" type="submit"><svg class="icon" aria-hidden="true"><use href="#i-bag"></use></svg> Adicionar ao pedido</button>
+        </form>
         <div class="dialog-links">
           <a href="assets/alaminuta-g-arte.webp" target="_blank" rel="noopener noreferrer">Abrir imagem em tamanho maior</a>
           <a href="assets/alaminuta.webp" target="_blank" rel="noopener noreferrer">Ver cartaz original</a>
@@ -244,7 +264,9 @@
         <h2 id="combo-junior-titulo">Combo Júnior</h2>
         <p>6 sobrecoxas, 1 porção de farofa, 1 porção de maionese de batata e 1 porção de arroz.</p>
         <p class="dialog-price">R$ 50,00</p>
-        <a class="button button--yellow" href="https://wa.me/5551999088670?text=Ol%C3%A1%2C%20Sabor%20Caseiro!%20Gostaria%20de%20pedir%20o%20Combo%20J%C3%BAnior." target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg> Pedir pelo WhatsApp</a>
+        <form class="add-item" data-add-item="combo-junior">
+          <button class="button button--yellow" type="submit"><svg class="icon" aria-hidden="true"><use href="#i-bag"></use></svg> Adicionar ao pedido</button>
+        </form>
         <div class="dialog-links">
           <a href="assets/combo-junior-arte.webp" target="_blank" rel="noopener noreferrer">Abrir imagem em tamanho maior</a>
           <a href="assets/combo-junior.webp" target="_blank" rel="noopener noreferrer">Ver cartaz original</a>
@@ -262,7 +284,9 @@
         <h2 id="combo-familia-titulo">Combo Família</h2>
         <p>8 sobrecoxas, 1 porção de massa ao alho e óleo, 1 porção de farofa, 1 porção grande de maionese de batata e 1 porção de arroz.</p>
         <p class="dialog-price">R$ 70,00</p>
-        <a class="button button--yellow" href="https://wa.me/5551999088670?text=Ol%C3%A1%2C%20Sabor%20Caseiro!%20Gostaria%20de%20pedir%20o%20Combo%20Fam%C3%ADlia." target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg> Pedir pelo WhatsApp</a>
+        <form class="add-item" data-add-item="combo-familia">
+          <button class="button button--yellow" type="submit"><svg class="icon" aria-hidden="true"><use href="#i-bag"></use></svg> Adicionar ao pedido</button>
+        </form>
         <div class="dialog-links">
           <a href="assets/combo-familia-arte.webp" target="_blank" rel="noopener noreferrer">Abrir imagem em tamanho maior</a>
           <a href="assets/combo-familia.webp" target="_blank" rel="noopener noreferrer">Ver cartaz original</a>
@@ -271,30 +295,135 @@
     </div>
   </dialog>
 
-  <dialog class="item-dialog" id="prato-sexta" aria-labelledby="prato-sexta-titulo">
+  <dialog class="item-dialog item-dialog--promo" id="prato-sexta" aria-labelledby="prato-sexta-titulo">
     <div class="dialog-layout">
       <form method="dialog" class="dialog-close"><button type="submit" aria-label="Fechar detalhes" autofocus><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button></form>
-      <div class="dialog-art"><img src="assets/prato-sexta.webp" alt="Cartaz de Prato de sexta" loading="lazy"></div>
+      <div class="dialog-art"><img src="assets/prato-sexta-arte.webp" alt="Arte do prato de sexta com frango, arroz, feijão, massa, maionese de batata e polenta frita" loading="lazy"></div>
       <div class="dialog-copy">
         <p class="section-label">Sexta-feira</p>
         <h2 id="prato-sexta-titulo">Prato de sexta</h2>
         <p>Arroz branco, feijão com bacon e calabresa em embalagem separada, sobrecoxa assada ou frango grelhado, massa ao alho e óleo, maionese de batata e polenta frita. Com porção de salada, R$ 22,00.</p>
-        <a class="button button--yellow" href="https://wa.me/5551999088670?text=Ol%C3%A1%2C%20Sabor%20Caseiro!%20Gostaria%20de%20consultar%20a%20disponibilidade%20do%20prato%20de%20sexta-feira." target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg> Pedir pelo WhatsApp</a>
+        <p class="dialog-price">R$ 20,00</p>
+        <form class="add-item" data-add-item="prato-sexta">
+          <label>Escolha a carne
+            <select name="protein" required>
+              <option value="">Selecione</option>
+              <option>Sobrecoxa assada</option>
+              <option>Frango grelhado</option>
+            </select>
+          </label>
+          <label class="add-item-extra"><input type="checkbox" name="salad"> Acrescentar porção de salada (+ R$ 2,00)</label>
+          <button class="button button--yellow" type="submit"><svg class="icon" aria-hidden="true"><use href="#i-bag"></use></svg> Adicionar ao pedido</button>
+        </form>
+        <div class="dialog-links">
+          <a href="assets/prato-sexta-arte.webp" target="_blank" rel="noopener noreferrer">Abrir imagem em tamanho maior</a>
+          <a href="assets/prato-sexta.webp" target="_blank" rel="noopener noreferrer">Ver cartaz original</a>
+        </div>
       </div>
     </div>
   </dialog>
 
-  <dialog class="item-dialog" id="prato-sabado" aria-labelledby="prato-sabado-titulo">
+  <dialog class="item-dialog item-dialog--promo" id="prato-sabado" aria-labelledby="prato-sabado-titulo">
     <div class="dialog-layout">
       <form method="dialog" class="dialog-close"><button type="submit" aria-label="Fechar detalhes" autofocus><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button></form>
-      <div class="dialog-art"><img src="assets/prato-sabado.webp" alt="Cartaz de Prato de sábado" loading="lazy"></div>
+      <div class="dialog-art"><img src="assets/prato-sabado-arte.webp" alt="Arte do prato de sábado com bife, arroz, feijão, fritas e ovo frito" loading="lazy"></div>
       <div class="dialog-copy">
         <p class="section-label">Sábado</p>
         <h2 id="prato-sabado-titulo">Prato de sábado</h2>
         <p>Arroz branco, feijão com bacon e calabresa em embalagem separada, bife ou frango grelhado, batata frita, ovo frito e paçoquinha de sobremesa. Com porção de salada, R$ 22,00.</p>
-        <a class="button button--yellow" href="https://wa.me/5551999088670?text=Ol%C3%A1%2C%20Sabor%20Caseiro!%20Gostaria%20de%20consultar%20a%20disponibilidade%20do%20prato%20de%20s%C3%A1bado." target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg> Pedir pelo WhatsApp</a>
+        <p class="dialog-price">R$ 20,00</p>
+        <form class="add-item" data-add-item="prato-sabado">
+          <label>Escolha a carne
+            <select name="protein" required>
+              <option value="">Selecione</option>
+              <option>Bife de gado</option>
+              <option>Frango grelhado</option>
+            </select>
+          </label>
+          <label class="add-item-extra"><input type="checkbox" name="salad"> Acrescentar porção de salada (+ R$ 2,00)</label>
+          <button class="button button--yellow" type="submit"><svg class="icon" aria-hidden="true"><use href="#i-bag"></use></svg> Adicionar ao pedido</button>
+        </form>
+        <div class="dialog-links">
+          <a href="assets/prato-sabado-arte.webp" target="_blank" rel="noopener noreferrer">Abrir imagem em tamanho maior</a>
+          <a href="assets/prato-sabado.webp" target="_blank" rel="noopener noreferrer">Ver cartaz original</a>
+        </div>
       </div>
     </div>
   </dialog>
+  <button class="button button--yellow order-shortcut" type="button" data-open-order aria-haspopup="dialog" hidden>
+    <svg class="icon" aria-hidden="true"><use href="#i-bag"></use></svg> Meu pedido <span class="order-count" data-order-count>0</span>
+  </button>
+  <p class="visually-hidden" id="order-status" role="status"></p>
+
+  <dialog class="item-dialog order-dialog" id="pedido" aria-labelledby="pedido-titulo">
+    <div class="order-shell">
+      <form method="dialog" class="dialog-close">
+        <button type="submit" aria-label="Fechar pedido" autofocus><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button>
+      </form>
+      <h2 id="pedido-titulo">Meu pedido</h2>
+      <div id="order-empty" class="order-empty">
+        <p>Seu pedido está vazio.</p>
+        <a class="button button--yellow" href="#cardapio" id="order-menu-link">Escolher no cardápio</a>
+      </div>
+      <div class="order-layout" id="order-content" hidden>
+        <section class="order-summary" aria-labelledby="order-items-title">
+          <h3 id="order-items-title">Itens do pedido</h3>
+          <ul class="order-lines" id="order-lines"></ul>
+          <dl class="order-totals">
+            <div><dt>Subtotal</dt><dd id="order-subtotal"></dd></div>
+            <div><dt>Taxa de entrega</dt><dd id="order-fee"></dd></div>
+            <div class="order-total"><dt>Total</dt><dd id="order-total"></dd></div>
+          </dl>
+        </section>
+        <form class="checkout-form" id="checkout-form" aria-labelledby="checkout-title">
+          <h3 id="checkout-title">Dados do pedido</h3>
+          <label>Nome do cliente
+            <input type="text" id="customer-name" name="customer-name" autocomplete="name" required maxlength="100">
+          </label>
+          <fieldset class="receipt-options">
+            <legend>Como você quer receber?</legend>
+            <label><input type="radio" name="recebimento" value="entrega" checked> Entrega <span>R$ 4,00</span></label>
+            <label><input type="radio" name="recebimento" value="retirada"> Retirada</label>
+          </fieldset>
+          <fieldset class="checkout-address" id="checkout-address">
+            <legend>Endereço em Charqueadas</legend>
+            <label>Rua
+              <input type="text" id="customer-street" name="customer-street" autocomplete="address-line1" required maxlength="120">
+            </label>
+            <label>Número
+              <input type="text" id="customer-number" name="customer-number" required maxlength="25" placeholder="Ex.: 100 ou s/n">
+            </label>
+            <label>Bairro
+              <input type="text" id="customer-neighborhood" name="customer-neighborhood" autocomplete="address-level3" required maxlength="100">
+            </label>
+          </fieldset>
+          <label>Forma de pagamento <span class="field-optional">(opcional)</span>
+            <input type="text" id="customer-payment" name="customer-payment" maxlength="70" placeholder="Ex.: Pix">
+          </label>
+          <label>Observações <span class="field-optional">(opcional)</span>
+            <textarea id="customer-notes" name="customer-notes" rows="3" maxlength="500" placeholder="Ex.: Sem cebola"></textarea>
+          </label>
+          <button class="button button--yellow" type="submit"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg> Enviar pedido pelo WhatsApp</button>
+          <p class="checkout-note">O WhatsApp abre com a mensagem pronta. Confirme o envio no aplicativo.</p>
+        </form>
+      </div>
+    </div>
+  </dialog>
+
+  <template id="order-line-template">
+    <li class="order-line">
+      <div><strong data-line-name></strong><p data-line-options></p></div>
+      <strong data-line-total></strong>
+      <div class="order-quantity">
+        <button type="button" data-cart-action="decrease">−</button>
+        <span data-line-quantity></span>
+        <button type="button" data-cart-action="increase">+</button>
+      </div>
+      <button type="button" class="order-remove" data-cart-action="remove">Remover</button>
+    </li>
+  </template>
+  <noscript>
+    <p class="order-noscript">Para fazer um pedido, fale com o restaurante pelo <a href="https://wa.me/5551999088670">WhatsApp</a>.</p>
+  </noscript>
 </body>
 </html>

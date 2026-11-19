@@ -419,3 +419,99 @@ h2 { font-size: clamp(3.2rem, 5.25vw, 5.1rem); letter-spacing: -.018em; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; }
 }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.order-count {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.4rem;
+  padding-inline: .3rem;
+  border-radius: 2rem;
+  background: var(--black);
+  color: var(--white);
+  font-size: .77rem;
+  line-height: 1.4rem;
+}
+.order-shortcut {
+  position: fixed;
+  z-index: 4;
+  inset: auto max(1rem, env(safe-area-inset-right)) max(1rem, env(safe-area-inset-bottom)) auto;
+  box-shadow: 0 .25rem 1.4rem #10100f3d;
+}
+.order-dialog { width: min(calc(100% - 2rem), 58rem); overscroll-behavior: contain; }
+.order-shell { position: relative; padding: 1.7rem; }
+.order-shell h2 { padding-right: 2.7rem; font-size: clamp(2.65rem, 6vw, 4rem); }
+.order-empty { display: grid; gap: .75rem; margin-top: 1.15rem; }
+.order-layout { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); gap: 1.25rem; margin-top: 1.3rem; }
+.order-summary, .checkout-form { padding: 1.05rem; border: 1px solid #e0dbce; border-radius: .55rem; background: var(--white); }
+.order-layout h3 { font-size: 1.9rem; }
+.order-lines { list-style: none; padding: 0; }
+.order-line {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: .45rem .55rem;
+  padding-block: .8rem;
+  border-bottom: 1px solid #e9e5da;
+}
+.order-line p { color: #514e45; font-size: .86rem; }
+.order-quantity { display: flex; gap: .45rem; align-items: center; font-weight: 700; }
+.order-quantity button {
+  min-width: 2.55rem;
+  min-height: 2.55rem;
+  border: 1px solid #d8d0bd;
+  border-radius: .32rem;
+  background: var(--paper);
+  color: var(--black);
+}
+.order-quantity button:hover { background: var(--yellow); }
+.order-remove { align-self: center; border: 0; background: transparent; color: #595246; text-decoration: underline; font-size: .82rem; }
+.order-totals { display: grid; gap: .35rem; margin: 1rem 0 0; }
+.order-totals div { display: flex; justify-content: space-between; gap: .5rem; }
+.order-totals dd { margin: 0; white-space: nowrap; }
+.order-total { padding-top: .45rem; border-top: 1px solid #e9e5da; font-weight: 800; font-size: 1.12rem; }
+
+.checkout-form, .add-item { display: grid; align-content: start; gap: .75rem; }
+.add-item { margin-top: 1rem; }
+.add-item .button { margin-top: 0; }
+.checkout-form label, .add-item label { display: block; color: var(--black); font-size: .92rem; font-weight: 700; }
+.checkout-form :is(input:not([type="radio"]), textarea), .add-item select {
+  display: block;
+  width: 100%;
+  min-height: 2.65rem;
+  margin-top: .25rem;
+  padding: .48rem .55rem;
+  border: 1px solid #c7bfad;
+  border-radius: .3rem;
+  background: var(--white);
+  color: var(--black);
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+}
+.checkout-form textarea { resize: vertical; }
+.checkout-form fieldset { min-width: 0; margin: 0; padding: 0; border: 0; }
+.checkout-form legend { padding: 0 0 .3rem; font-size: .92rem; font-weight: 700; }
+.receipt-options { display: flex; flex-wrap: wrap; gap: .4rem 1rem; }
+.receipt-options label { min-height: 2rem; display: flex; align-items: center; gap: .32rem; }
+.receipt-options label span, .field-optional { color: #595246; font-weight: 400; }
+.checkout-form input[type="radio"], .add-item input[type="checkbox"] { accent-color: #926600; }
+.checkout-address { display: grid; grid-template-columns: minmax(0, 1fr) minmax(5.8rem, .51fr); gap: .55rem; }
+.checkout-address label:last-child { grid-column: 1 / -1; }
+.checkout-note { color: #534e43; font-size: .83rem; line-height: 1.4; }
+.order-noscript { padding: .8rem; background: var(--yellow); text-align: center; }
+.order-noscript a { text-decoration: underline; }
+
+@media (max-width: 40rem) {
+  .order-shell { padding: 1.05rem; }
+  .order-layout { grid-template-columns: minmax(0, 1fr); gap: .75rem; }
+  .order-summary, .checkout-form { padding: .88rem; }
+}
