@@ -38,7 +38,7 @@
         <a href="#restaurante">O restaurante</a>
         <a href="#localizacao">Localização</a>
       </nav>
-      <a class="button button--yellow header-order" href="https://wa.me/5551999088670?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20pedido%20no%20Sabor%20Caseiro." target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg> <span>Pedir no WhatsApp</span></a>
+      <a class="button button--yellow header-order" href="#cardapio"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg> <span>Pedir no WhatsApp</span></a>
     </div>
   </header>
 
@@ -50,7 +50,7 @@
         <h1 id="hero-title">Comida de casa,<br><span>sabor de verdade.</span></h1>
         <p class="hero-description">Churrasco na brasa, buffet caseiro e combos para dividir. Venha almoçar com a gente ou peça de casa.</p>
         <div class="hero-actions">
-          <a class="button button--yellow" href="https://wa.me/5551999088670?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20pedido%20no%20Sabor%20Caseiro." target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg> Pedir no WhatsApp</a>
+          <a class="button button--yellow" href="#cardapio"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg> Pedir no WhatsApp</a>
           <a class="button button--outline" href="#cardapio">Ver cardápio</a>
         </div>
       </div>
@@ -86,8 +86,8 @@
               <h3>Alaminuta</h3>
               <p class="menu-description">Bife de gado ou frango, arroz, feijão, fritas, ovo e salada.</p>
               <div class="menu-card-footer menu-card-footer--sizes">
-                <a class="menu-details menu-size-link" href="assets/alaminuta-m-arte.webp" data-dialog="alaminuta-m" aria-label="Ver arte da alaminuta tamanho M por R$ 25,00"><span>Tamanho M</span><strong>R$ 25,00</strong></a>
-                <a class="menu-details menu-size-link" href="assets/alaminuta-g-arte.webp" data-dialog="alaminuta-g" aria-label="Ver arte da alaminuta tamanho G por R$ 34,00"><span>Tamanho G</span><strong>R$ 34,00</strong></a>
+                <div class="menu-size-option"><a class="menu-details menu-size-link" href="assets/alaminuta-m-arte.webp" data-dialog="alaminuta-m"><span>Tamanho M</span><strong>R$ 25,00</strong></a><button class="add-to-cart" type="button" data-add="Alaminuta M" data-price="25">Adicionar</button></div>
+                <div class="menu-size-option"><a class="menu-details menu-size-link" href="assets/alaminuta-g-arte.webp" data-dialog="alaminuta-g"><span>Tamanho G</span><strong>R$ 34,00</strong></a><button class="add-to-cart" type="button" data-add="Alaminuta G" data-price="34">Adicionar</button></div>
               </div>
             </div>
           </article>
@@ -102,6 +102,7 @@
               <div class="menu-card-footer">
                 <p class="menu-price"><strong>R$ 50,00</strong></p>
                 <a class="menu-details" href="assets/combo-junior-arte.webp" data-dialog="combo-junior" aria-label="Ver arte e detalhes do Combo Júnior">Ver arte</a>
+                <button class="add-to-cart" type="button" data-add="Combo Júnior" data-price="50">Adicionar</button>
               </div>
             </div>
           </article>
@@ -116,6 +117,7 @@
               <div class="menu-card-footer">
                 <p class="menu-price"><strong>R$ 70,00</strong></p>
                 <a class="menu-details" href="assets/combo-familia-arte.webp" data-dialog="combo-familia" aria-label="Ver arte e detalhes do Combo Família">Ver arte</a>
+                <button class="add-to-cart" type="button" data-add="Combo Família" data-price="70">Adicionar</button>
               </div>
             </div>
           </article>
@@ -132,6 +134,7 @@
               <div class="menu-card-footer">
                 <p class="menu-price"><strong>R$ 20,00</strong></p>
                 <a class="menu-details" href="assets/prato-sexta.webp" data-dialog="prato-sexta" aria-label="Ver detalhes de Prato de sexta">Ver detalhes</a>
+                <button class="add-to-cart" type="button" data-add="Prato de sexta" data-price="20">Adicionar</button>
               </div>
             </div>
           </article>
@@ -146,12 +149,42 @@
               <div class="menu-card-footer">
                 <p class="menu-price"><strong>R$ 20,00</strong></p>
                 <a class="menu-details" href="assets/prato-sabado.webp" data-dialog="prato-sabado" aria-label="Ver detalhes de Prato de sábado">Ver detalhes</a>
+                <button class="add-to-cart" type="button" data-add="Prato de sábado" data-price="20">Adicionar</button>
               </div>
             </div>
           </article>
         </div>
         <p class="menu-image-note">Imagens dos pratos ilustrativas.</p>
         <p class="delivery-note"><svg class="icon" aria-hidden="true"><use href="#i-delivery"></use></svg> <span>Taxa de entrega de <strong>R$ 4,00</strong> para qualquer bairro de Charqueadas. Consulte a disponibilidade pelo WhatsApp.</span></p>
+      </div>
+    </section>
+
+
+    <section class="checkout-section" id="pedido" aria-labelledby="pedido-titulo">
+      <div class="wrap checkout-wrap">
+        <div class="checkout-intro"><p class="section-label">Faça seu pedido</p><h2 id="pedido-titulo">Seu pedido,<br>do seu jeito.</h2><p>Adicione os pratos ao carrinho e envie os dados completos diretamente para nosso WhatsApp.</p></div>
+        <div class="checkout-panel">
+          <div class="cart-heading"><div><p class="section-label">Seu carrinho</p><h3>Seu pedido</h3></div><span class="cart-count" id="cart-count">0 itens</span></div>
+          <div id="cart-items" class="cart-items"><p class="cart-empty">Seu carrinho está vazio. Escolha um prato no cardápio.</p></div>
+          <div class="cart-subtotal"><span>Subtotal</span><strong id="cart-subtotal">R$ 0,00</strong></div>
+          <form id="checkout-form" class="checkout-form">
+            <p class="delivery-hint">Taxa de entrega: R$ 4,00 em Charqueadas. A disponibilidade será confirmada pelo atendimento.</p>
+            <label for="customer-name">Seu nome</label><input id="customer-name" name="name" type="text" placeholder="Nome completo" autocomplete="name" required>
+            <label for="order-type">Como quer receber?</label><select id="order-type" name="orderType"><option value="Entrega">Entrega</option><option value="Retirada no local">Retirada no local</option></select>
+            <div id="delivery-fields">
+              <label for="customer-address">Rua e número</label><input id="customer-address" name="address" type="text" placeholder="Ex.: Rua Brasil, 100" autocomplete="street-address">
+              <label for="customer-neighborhood">Bairro</label><input id="customer-neighborhood" name="neighborhood" type="text" placeholder="Informe seu bairro">
+              <label for="address-reference">Complemento / referência <span>(opcional)</span></label><input id="address-reference" name="reference" type="text" placeholder="Casa, apartamento, ponto de referência">
+            </div>
+            <label for="payment-method">Forma de pagamento</label><select id="payment-method" name="payment"><option>Pix</option><option>Dinheiro</option><option>Cartão de débito</option><option>Cartão de crédito</option></select>
+            <label for="change-for">Precisa de troco? <span>(se pagar em dinheiro)</span></label><input id="change-for" name="change" type="text" placeholder="Ex.: Troco para R$ 100,00">
+            <label for="order-notes">Observações <span>(opcional)</span></label><textarea id="order-notes" name="notes" rows="3" placeholder="Ex.: sem cebola, ponto da carne... "></textarea>
+            <div class="cart-total-row"><span>Taxa de entrega</span><strong id="delivery-fee">R$ 4,00</strong></div>
+            <div class="cart-total-row cart-grand-total"><span>Total</span><strong id="cart-total">R$ 4,00</strong></div>
+            <button class="button button--yellow checkout-submit" type="submit"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg> Enviar pedido pelo WhatsApp</button>
+            <p class="checkout-privacy">Ao enviar, o WhatsApp será aberto com os dados do seu pedido para confirmação.</p>
+          </form>
+        </div>
       </div>
     </section>
 
@@ -196,7 +229,7 @@
       <p>Sabor Caseiro Restaurante · Charqueadas, RS</p>
       <div class="footer-social">
         <a href="https://www.instagram.com/saborcaseirocharq/" target="_blank" rel="noopener noreferrer" aria-label="Instagram do Sabor Caseiro"><svg class="icon" aria-hidden="true"><use href="#i-instagram"></use></svg></a>
-        <a href="https://wa.me/5551999088670?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20pedido%20no%20Sabor%20Caseiro." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp do Sabor Caseiro"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg></a>
+        <a href="#cardapio" aria-label="WhatsApp do Sabor Caseiro"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg></a>
       </div>
     </div>
   </footer>
