@@ -85,9 +85,9 @@
               <p class="menu-card-label">Tamanhos M e G</p>
               <h3>Alaminuta</h3>
               <p class="menu-description">Bife de gado ou frango, arroz, feijão, fritas, ovo e salada.</p>
-              <div class="menu-card-footer">
-                <p class="menu-price"><span>A partir de</span><strong>R$ 25,00</strong></p>
-                <a class="menu-details" href="assets/alaminuta.webp" data-dialog="alaminuta" aria-label="Ver detalhes de Alaminuta">Ver detalhes</a>
+              <div class="menu-card-footer menu-card-footer--sizes">
+                <a class="menu-details menu-size-link" href="assets/alaminuta-m-arte.webp" data-dialog="alaminuta-m" aria-label="Ver arte da alaminuta tamanho M por R$ 25,00"><span>Tamanho M</span><strong>R$ 25,00</strong></a>
+                <a class="menu-details menu-size-link" href="assets/alaminuta-g-arte.webp" data-dialog="alaminuta-g" aria-label="Ver arte da alaminuta tamanho G por R$ 34,00"><span>Tamanho G</span><strong>R$ 34,00</strong></a>
               </div>
             </div>
           </article>
@@ -101,7 +101,7 @@
               <p class="menu-description">Sobrecoxas assadas com arroz, farofa e maionese de batata.</p>
               <div class="menu-card-footer">
                 <p class="menu-price"><strong>R$ 50,00</strong></p>
-                <a class="menu-details" href="assets/combo-junior.webp" data-dialog="combo-junior" aria-label="Ver detalhes de Combo Júnior">Ver detalhes</a>
+                <a class="menu-details" href="assets/combo-junior-arte.webp" data-dialog="combo-junior" aria-label="Ver arte e detalhes do Combo Júnior">Ver arte</a>
               </div>
             </div>
           </article>
@@ -115,7 +115,7 @@
               <p class="menu-description">Sobrecoxas assadas com massa, arroz, farofa e maionese de batata.</p>
               <div class="menu-card-footer">
                 <p class="menu-price"><strong>R$ 70,00</strong></p>
-                <a class="menu-details" href="assets/combo-familia.webp" data-dialog="combo-familia" aria-label="Ver detalhes de Combo Família">Ver detalhes</a>
+                <a class="menu-details" href="assets/combo-familia-arte.webp" data-dialog="combo-familia" aria-label="Ver arte e detalhes do Combo Família">Ver arte</a>
               </div>
             </div>
           </article>
@@ -201,41 +201,72 @@
     </div>
   </footer>
 
-  <dialog class="item-dialog" id="alaminuta" aria-labelledby="alaminuta-titulo">
+  <dialog class="item-dialog item-dialog--promo" id="alaminuta-m" aria-labelledby="alaminuta-m-titulo">
     <div class="dialog-layout">
       <form method="dialog" class="dialog-close"><button type="submit" aria-label="Fechar detalhes" autofocus><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button></form>
-      <div class="dialog-art"><img src="assets/alaminuta.webp" alt="Cartaz de Alaminuta" loading="lazy"></div>
+      <div class="dialog-art"><img src="assets/alaminuta-m-arte.webp" alt="Arte da Alaminuta M com um bife e um ovo frito" loading="lazy"></div>
       <div class="dialog-copy">
-        <p class="section-label">Tamanhos M e G</p>
-        <h2 id="alaminuta-titulo">Alaminuta</h2>
-        <p>Escolha o tamanho M com 1 bife e 1 ovo frito por R$ 25,00 ou o tamanho G com 2 bifes e 2 ovos fritos por R$ 34,00. Ambos acompanham arroz branco, feijão com bacon e calabresa, batata frita e salada de alface e tomate.</p>
-        <a class="button button--yellow" href="https://wa.me/5551999088670?text=Ol%C3%A1%2C%20Sabor%20Caseiro!%20Gostaria%20de%20consultar%20os%20tamanhos%20da%20alaminuta." target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg> Pedir pelo WhatsApp</a>
+        <h2 id="alaminuta-m-titulo">Alaminuta M</h2>
+        <p>1 bife grelhado de gado ou frango, 1 ovo frito, arroz branco, feijão com bacon e calabresa, batata frita e salada de alface e tomate.</p>
+        <p class="dialog-price">R$ 25,00</p>
+        <a class="button button--yellow" href="https://wa.me/5551999088670?text=Ol%C3%A1%2C%20Sabor%20Caseiro!%20Gostaria%20de%20pedir%20uma%20alaminuta%20tamanho%20M." target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg> Pedir pelo WhatsApp</a>
+        <div class="dialog-links">
+          <a href="assets/alaminuta-m-arte.webp" target="_blank" rel="noopener noreferrer">Abrir imagem em tamanho maior</a>
+          <a href="assets/alaminuta.webp" target="_blank" rel="noopener noreferrer">Ver cartaz original</a>
+        </div>
       </div>
     </div>
   </dialog>
 
-  <dialog class="item-dialog" id="combo-junior" aria-labelledby="combo-junior-titulo">
+  <dialog class="item-dialog item-dialog--promo" id="alaminuta-g" aria-labelledby="alaminuta-g-titulo">
     <div class="dialog-layout">
       <form method="dialog" class="dialog-close"><button type="submit" aria-label="Fechar detalhes" autofocus><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button></form>
-      <div class="dialog-art"><img src="assets/combo-junior.webp" alt="Cartaz de Combo Júnior" loading="lazy"></div>
+      <div class="dialog-art"><img src="assets/alaminuta-g-arte.webp" alt="Arte da Alaminuta G com dois bifes e dois ovos fritos" loading="lazy"></div>
+      <div class="dialog-copy">
+        <h2 id="alaminuta-g-titulo">Alaminuta G</h2>
+        <p>2 bifes grelhados de gado ou frango, 2 ovos fritos, arroz branco, feijão com bacon e calabresa, batata frita e salada de alface e tomate.</p>
+        <p class="dialog-price">R$ 34,00</p>
+        <a class="button button--yellow" href="https://wa.me/5551999088670?text=Ol%C3%A1%2C%20Sabor%20Caseiro!%20Gostaria%20de%20pedir%20uma%20alaminuta%20tamanho%20G." target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg> Pedir pelo WhatsApp</a>
+        <div class="dialog-links">
+          <a href="assets/alaminuta-g-arte.webp" target="_blank" rel="noopener noreferrer">Abrir imagem em tamanho maior</a>
+          <a href="assets/alaminuta.webp" target="_blank" rel="noopener noreferrer">Ver cartaz original</a>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="item-dialog item-dialog--promo" id="combo-junior" aria-labelledby="combo-junior-titulo">
+    <div class="dialog-layout">
+      <form method="dialog" class="dialog-close"><button type="submit" aria-label="Fechar detalhes" autofocus><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button></form>
+      <div class="dialog-art"><img src="assets/combo-junior-arte.webp" alt="Arte do Combo Júnior com sobrecoxas assadas, farofa, maionese de batata e arroz" loading="lazy"></div>
       <div class="dialog-copy">
         <p class="section-label">6 sobrecoxas</p>
         <h2 id="combo-junior-titulo">Combo Júnior</h2>
         <p>6 sobrecoxas, 1 porção de farofa, 1 porção de maionese de batata e 1 porção de arroz.</p>
+        <p class="dialog-price">R$ 50,00</p>
         <a class="button button--yellow" href="https://wa.me/5551999088670?text=Ol%C3%A1%2C%20Sabor%20Caseiro!%20Gostaria%20de%20pedir%20o%20Combo%20J%C3%BAnior." target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg> Pedir pelo WhatsApp</a>
+        <div class="dialog-links">
+          <a href="assets/combo-junior-arte.webp" target="_blank" rel="noopener noreferrer">Abrir imagem em tamanho maior</a>
+          <a href="assets/combo-junior.webp" target="_blank" rel="noopener noreferrer">Ver cartaz original</a>
+        </div>
       </div>
     </div>
   </dialog>
 
-  <dialog class="item-dialog" id="combo-familia" aria-labelledby="combo-familia-titulo">
+  <dialog class="item-dialog item-dialog--promo" id="combo-familia" aria-labelledby="combo-familia-titulo">
     <div class="dialog-layout">
       <form method="dialog" class="dialog-close"><button type="submit" aria-label="Fechar detalhes" autofocus><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button></form>
-      <div class="dialog-art"><img src="assets/combo-familia.webp" alt="Cartaz de Combo Família" loading="lazy"></div>
+      <div class="dialog-art"><img src="assets/combo-familia-arte.webp" alt="Arte do Combo Família com sobrecoxas assadas, massa, farofa, maionese de batata e arroz" loading="lazy"></div>
       <div class="dialog-copy">
         <p class="section-label">8 sobrecoxas</p>
         <h2 id="combo-familia-titulo">Combo Família</h2>
         <p>8 sobrecoxas, 1 porção de massa ao alho e óleo, 1 porção de farofa, 1 porção grande de maionese de batata e 1 porção de arroz.</p>
+        <p class="dialog-price">R$ 70,00</p>
         <a class="button button--yellow" href="https://wa.me/5551999088670?text=Ol%C3%A1%2C%20Sabor%20Caseiro!%20Gostaria%20de%20pedir%20o%20Combo%20Fam%C3%ADlia." target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg> Pedir pelo WhatsApp</a>
+        <div class="dialog-links">
+          <a href="assets/combo-familia-arte.webp" target="_blank" rel="noopener noreferrer">Abrir imagem em tamanho maior</a>
+          <a href="assets/combo-familia.webp" target="_blank" rel="noopener noreferrer">Ver cartaz original</a>
+        </div>
       </div>
     </div>
   </dialog>
